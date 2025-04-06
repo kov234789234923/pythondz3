@@ -1,7 +1,7 @@
 # Умножение элементов списка на множитель
 
 # функция
-def get_spisok() -> list:
+def get_sp() -> list:
     while True:
         try:
             sp1 = input("Введите список чисел через пробел: ").strip()
@@ -10,7 +10,7 @@ def get_spisok() -> list:
             print("Ошибка: вводите только числа, разделенные пробелами!")
 
 
-def get_mnoz() -> int:
+def get_mn() -> int:
     while True:
         try:
             ch1 = input("Введите множитель (по умолчанию 2): ").strip()
@@ -21,8 +21,8 @@ def get_mnoz() -> int:
 def list1 (sp: list, ch: int = 2) -> list:
     return [x * ch for x in sp]
 
-sp_r = get_spisok()
-ch_r = get_mnoz()
+sp_r = get_sp()
+ch_r = get_mn()
 
 result = list1 (sp_r, ch_r)
 print("Результат (функция):", result)
@@ -30,16 +30,16 @@ print("Результат (функция):", result)
 # лямбда
 while True:
     try:
-        l_get_spisok = lambda sp01=input("Введите список чисел через пробел: ").strip(): list(map(int, sp01.split())) if sp01 else []
-        sp0 = l_get_spisok()
+        l_get_sp = lambda sp01=input("Введите список чисел через пробел: ").strip(): list(map(int, sp01.split())) if sp01 else []
+        sp0 = l_get_sp()
         break
     except ValueError:
         print("Ошибка: вводите только числа, разделенные пробелами!")
 
 while True:
     try:
-        l_get_mnoz =lambda  ch01 = input("Введите множитель (по умолчанию 2): ").strip(): int(ch01) if ch01 else 2
-        ch0 = l_get_mnoz()
+        l_get_mnz =lambda  ch01 = input("Введите множитель (по умолчанию 2): ").strip(): int(ch01) if ch01 else 2
+        ch0 = l_get_mnz()
         break
     except ValueError:
         print("Ошибка: множитель должен быть числом!")
